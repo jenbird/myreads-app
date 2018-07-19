@@ -1,13 +1,11 @@
 import React, { Component } from 'react';
-//import { Link } from 'react-router-dom'
-//import { Route } from 'react-router-dom'
-
+import { Link } from 'react-router-dom'
 
 class BookShelf extends Component {
 
 render() {
 
-  const { books, shelfName } = this.props;
+  const { shelfName } = this.props;
 
     return (
       <div>
@@ -25,17 +23,21 @@ render() {
                           })`}}></div>
                   <div className="book-shelf-changer">
 
+
                     </div>
                     </div>
                     </div>
+                    <div className="book-title">{book.title}</div>
+                    <div className="book-authors">{book.authors}</div>
+
                 </li>
               ))}
               </ol>
           </div>
           </div>
-            <div className="open-search">
-              <a onClick={() => this.setState({ showSearchPage: true })}>Add a book</a>
-              </div>
+          <div className="open-search">
+            <Link to="/search">add book</Link>
+        </div>
         </div>
 
 
