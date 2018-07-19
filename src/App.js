@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import * as BooksAPI from './BooksAPI'
-//import {Link} from 'react-router-dom'
-//import { Route } from 'react-router-dom'
+import {Link} from 'react-router-dom'
+import { Route } from 'react-router-dom'
 import './App.css'
 import BookShelf from './BookShelf.js'
 
@@ -38,11 +38,31 @@ updateShelf = (book, shelf) => {
 
     return (
       <div className="app">
-      <div className="list-books">
-        <div className="list-books-title">
-          <h1>MyReads</h1>
-        </div>
-        <div className="list-books-content">
+
+        <div className="list-books">
+          <div className="list-books-title">
+            <h1>MyReads</h1>
+          </div>
+          <div className="list-books-content">
+
+          <Route exact path="/search" render={() => (
+            <div className="search-books">
+              <div className="search-books-bar">
+                <a className="close-search">Close</a>
+                <div className="search-books-input-wrapper">
+
+                  <input type="text" placeholder="Search by title or author"/>
+                </div>
+              </div>
+              <div className="search-books-results">
+                <ol className="books-grid"></ol>
+
+              </div>
+            </div>
+          )} />
+
+        <Route exact path="/" render={() => (
+            <div>
 
           <BookShelf
             shelfName="Currently Reading"
@@ -56,12 +76,14 @@ updateShelf = (book, shelf) => {
             shelfName="Want to read"
             books={books.filter(book => book.shelf === "read")}
             changeShelf={this.updateShelf} />
-
+</div>
+        )}
+        />
 
       </div>
-
     </div>
   </div>
+
 )
   }
 }

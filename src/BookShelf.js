@@ -33,7 +33,10 @@ render() {
               </ol>
           </div>
           </div>
-          </div>
+            <div className="open-search">
+              <a onClick={() => this.setState({ showSearchPage: true })}>Add a book</a>
+              </div>
+        </div>
 
 
     )
