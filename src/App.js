@@ -43,7 +43,8 @@ console.log(this.state.books);
 
 <div>
           <Route exact path="/search" render={() => (
-            <SearchBar onChangeShelf={this.updateShelf}/>
+            <SearchBar updateShelf={this.updateShelf}
+              />
           )} />
 </div>
 
