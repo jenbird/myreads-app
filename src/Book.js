@@ -14,7 +14,7 @@ render() {
                   `url(${this.props.book.imageLinks.thumbnail})` : '';
 
     return (
-      <div>
+        <div>
               <div className="book">
                 <div className="book-top">
                   <div className="book-cover"
@@ -22,7 +22,7 @@ render() {
                   }}></div>
                   <div className="book-shelf-changer">
                   <select
-                        defaultValue={this.state.shelf}
+                        defaultValue={this.props.currentShelf}
                         onChange={(event) =>
                           this.props.updateShelf(this.props.book, event.target.value)
                         }

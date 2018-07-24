@@ -29,8 +29,6 @@ class App extends Component {
 
 
   render() {
-console.log(this.state.books);
-
 
     return (
       <div className="app">
@@ -39,19 +37,19 @@ console.log(this.state.books);
         books={this.state.books}
         updateShelf={this.updateShelf}
         />
-</div>
+        </div>
 
-<div>
+        <div>
           <Route exact path="/search" render={() => (
-            <SearchBar updateShelf={this.updateShelf}
+            <SearchBar
+              updateShelf={this.updateShelf}
+              books={this.props.books}
               />
           )} />
-</div>
-
+        </div>
     </div>
-
 )
-  }
+}
 }
 
 export default App;
