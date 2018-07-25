@@ -3,10 +3,6 @@ import { Link } from 'react-router-dom'
 
 class Book extends Component {
 
-  state = {
-      books: [],
-    }
-
 render() {
 
   const { book } = this.props;
