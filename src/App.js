@@ -42,7 +42,7 @@ class App extends Component {
           <Route exact path="/search" render={() => (
             <SearchBar
               updateShelf={this.updateShelf}
-              books={this.props.books}
+              books={this.state.books}
               />
           )} />
         </div>

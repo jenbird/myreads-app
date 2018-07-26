@@ -41,6 +41,8 @@ class SearchBar extends Component {
 
   render() {
 
+    const { shelfName } = this.props;
+
     return (
 
       <div>
@@ -62,23 +64,28 @@ class SearchBar extends Component {
       </div>
 
         <div className = "search-books-results" >
-        <ol className = "books-grid" > {
-          this.state.searchResults
+        <ol className = "books-grid">
+          {this.state.searchResults
           .map(searchResults => {
-            let shelf = "none";
-
+            let shelf = 'none';
+            this.props.books.map(book => (
+              book.id === searchResults.id ? shelf = book.shelf : ''
+            ))
             return (
               <li key = {searchResults.id} >
                 <Book
-                book = {searchResults}
-                updateShelf = {this.props.updateShelf}
-                currentShelf = {shelf}
+                book={searchResults}
+                updateShelf={this.props.updateShelf}
+                currentShelf={shelf}
                 />
               </li>
             )
-          })
-        }
+        })
+      }
         </ol>
+
+
+
 
         </div>
         </div>
