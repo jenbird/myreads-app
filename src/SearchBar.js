@@ -32,7 +32,9 @@ class SearchBar extends Component {
           });
         }
       })
-    } else {
+    }
+
+    else {
       this.setState({
         searchResults: []
       })
